@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "995147200526",
+    "firebase_url": "https://pengyouversion2.firebaseio.com",
+    "project_id": "pengyouversion2",
+    "storage_bucket": "pengyouversion2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995147200526:android:ec15605be70b0e11",
+        "android_client_info": {
+          "package_name": "com.example.jiayu.pengyou_version2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995147200526-btt71j7rse1fj61srv85rha6d9e36pr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jiayu.pengyou_version2",
+            "certificate_hash": "b0df45ccfab718ad9b77e5c2292b6e5fe3d8fef1"
+          }
+        },
+        {
+          "client_id": "995147200526-c317k4fsg5p9nedqe5ajb9ifgsjbr5cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkglFMjGd8cv5oAGklpgdYryl9uLYnksY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995147200526-c317k4fsg5p9nedqe5ajb9ifgsjbr5cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
