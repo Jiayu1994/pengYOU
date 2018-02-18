@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.content.Intent;
 import android.widget.TextView;
@@ -22,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class InterestPageActivity extends AppCompatActivity {
 
     private Toolbar mInterestpageToolbar;
+    private Button mAddEvent_Btn;
 
     private DatabaseReference mInterestpageRef;
     private FirebaseAuth mAuth;
@@ -53,6 +55,7 @@ public class InterestPageActivity extends AppCompatActivity {
         mCurrentUserId = mAuth.getCurrentUser().getUid();
 
 
+
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
@@ -71,6 +74,7 @@ public class InterestPageActivity extends AppCompatActivity {
                     //intent.putExtra("room_name",((TextView)view).getText().toString() );
 
                     intent.putExtra("info","This is activity from card item index  "+finalI);
+                    intent.putExtra("Grid_Index",finalI);
                     startActivity(intent);
 
                     }
@@ -78,5 +82,8 @@ public class InterestPageActivity extends AppCompatActivity {
 
         }
     }
+
+
+
 
 }

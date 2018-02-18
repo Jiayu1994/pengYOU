@@ -61,7 +61,10 @@
         <activity
             android:name=".InterestPageActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".InterestActivity"></activity>
+        <activity android:name=".InterestActivity"
+            android:parentActivityName=".InterestPageActivity"/>
+        <activity android:name=".EventActivity"
+            android:parentActivityName=".InterestActivity"/>
     </application>
 
 </manifest>

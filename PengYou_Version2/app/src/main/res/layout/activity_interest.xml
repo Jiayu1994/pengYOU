@@ -7,6 +7,14 @@
     tools:context="com.example.jiayu.pengyou_version2.InterestActivity">
 
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/interest_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/interest_app_bar" />
+
     <include
         android:id="@+id/interest_app_bar"
         layout="@layout/app_bar_layout"
@@ -16,59 +24,24 @@
         android:layout_alignParentTop="true"
         android:layout_weight="1" />
 
-
     <LinearLayout
-        android:layout_width="392dp"
-        android:layout_height="588dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/interest_app_bar"
-        android:layout_weight="9"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
-        <ScrollView
-            android:layout_width="395dp"
-            android:layout_height="0dp"
-            android:layout_weight="1.88"
-            android:fillViewport="true"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
-
-            <ListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="5.15" />
-        </ScrollView>
-
-        <LinearLayout
-            android:layout_width="395dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="64dp">
-
-            <EditText
-                android:id="@+id/room_name_edittext"
-                android:layout_width="240dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="413dp" />
-
-            <Button
-                android:id="@+id/btn_add_hangout"
-                android:layout_width="110dp"
-                android:layout_height="match_parent"
-                android:backgroundTint="@android:color/holo_orange_dark"
-                android:text="Add Hangout"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                android:textSize="12sp" />
-
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_add_hangout"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:text="Add Hangout"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textSize="12sp" />
 
     </LinearLayout>
+
 
     <TextView
         android:id="@+id/txtInfo"
