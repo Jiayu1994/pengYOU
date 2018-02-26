@@ -6,6 +6,8 @@
     <string name="already_have_an_account">Already Have an Account?</string>
     <string name="sign_in_fail">Cannot sign in.\nPlease check the form and try again</string>
     <string name="added_event">Event is added!</string>
+    <string name="added_help">Message is sent to adminstrator</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

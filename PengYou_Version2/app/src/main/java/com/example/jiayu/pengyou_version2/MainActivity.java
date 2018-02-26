@@ -178,6 +178,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(settingsIntent);
         }
 
+        if (item.getItemId() == R.id.help_setting_btn){
+
+            Intent settingsIntent = new Intent(MainActivity.this, HelpActivity.class);
+            startActivity(settingsIntent);
+        }
+
         if(item.getItemId()==R.id.main_logout_btn)
         {
             mUserRef.child("online").setValue(ServerValue.TIMESTAMP);

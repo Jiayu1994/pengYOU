@@ -205,7 +205,19 @@ public class EventActivity extends AppCompatActivity {
 
         }
 
+        else if(strEvent.equals("E-Sports")) {
 
+            List<String> list = new ArrayList<String>();
+            list.add("RPG");
+            list.add("Dota");
+            list.add("Others");
+
+            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_spinner_item, list);
+            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            mEventSpinner.setAdapter(dataAdapter);
+
+        }
 
 
     }

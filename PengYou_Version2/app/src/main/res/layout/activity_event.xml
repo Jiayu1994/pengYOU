@@ -15,6 +15,7 @@
         android:layout_below="@+id/event_participant"
         android:layout_centerVertical="true"
         android:layout_marginEnd="36dp"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:text="Submit" />
 
     <TextView
