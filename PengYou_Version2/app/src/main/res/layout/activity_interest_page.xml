@@ -19,7 +19,7 @@
             android:layout_weight="2">
 
             <include
-                android:id="@+id/interest_app_bar"
+                android:id="@+id/view_app_bar"
                 layout="@layout/app_bar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -447,12 +447,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="79dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/empty" />
+                        android:src="@drawable/others" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Empty"
+                        android:text="Others"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"
@@ -484,12 +484,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="82dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/others" />
+                        android:src="@drawable/empty" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Others"
+                        android:text="Empty"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="18sp"

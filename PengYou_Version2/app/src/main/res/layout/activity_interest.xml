@@ -13,10 +13,10 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/linearLayout2"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/interest_app_bar" />
+        android:layout_below="@+id/view_app_bar" />
 
     <include
-        android:id="@+id/interest_app_bar"
+        android:id="@+id/view_app_bar"
         layout="@layout/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
             android:layout_width="110dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_orange_dark"
+            android:backgroundTint="@android:color/holo_blue_dark"
             android:text="Add Hangout"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="12sp" />
@@ -49,6 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Textview"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:visibility="invisible" />
 
 </RelativeLayout>

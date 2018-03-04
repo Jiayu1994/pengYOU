@@ -1,44 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="160dp">
 
     <TextView
         android:id="@+id/event_single_specific"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/event_single_numParticipant"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="12dp"
         android:text="Specific Event" />
-
-    <TextView
-        android:id="@+id/event_single_numParticipant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/event_single_title"
-        android:layout_below="@+id/event_single_title"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Number of participant" />
 
     <TextView
         android:id="@+id/event_single_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
+        android:layout_alignTop="@+id/event_single_specific"
+        android:layout_marginStart="28dp"
         android:text="Event Title"
-        android:textColor="@android:color/black"
-        android:textSize="18dp" />
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/event_single_numParticipant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/event_single_location"
+        android:layout_below="@+id/event_single_location"
+        android:layout_marginTop="12dp"
+        android:text="Participant"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/event_single_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/event_single_title"
+        android:layout_below="@+id/event_single_title"
+        android:layout_marginTop="39dp"
+        android:text="location"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/event_single_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/event_single_title"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="65dp"
-        android:text="time" />
+        android:layout_alignBaseline="@+id/event_single_date"
+        android:layout_alignBottom="@+id/event_single_date"
+        android:layout_alignEnd="@+id/event_single_specific"
+        android:layout_marginEnd="71dp"
+        android:text="time"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/event_single_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/event_single_location"
+        android:layout_below="@+id/event_single_title"
+        android:layout_marginTop="11dp"
+        android:text="date"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="15sp" />
+
 </RelativeLayout>

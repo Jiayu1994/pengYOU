@@ -88,7 +88,6 @@ public class UsersActivity extends AppCompatActivity {
                 final String user_id=getRef(position).getKey();
 
 
-
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

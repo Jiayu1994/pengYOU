@@ -1,42 +1,29 @@
 package com.example.jiayu.pengyou_version2;
 
-import android.content.Context;
 import android.content.Intent;
-import android.provider.CalendarContract;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class InterestActivity extends AppCompatActivity {
+
+    public static final String EXTRA_CREATOR = "creatorName";
+    public static final String EXTRA_LIKES = "likeCount";
 
     private FirebaseAuth mAuth;
     private String mCurrentUserId;
@@ -46,7 +33,7 @@ public class InterestActivity extends AppCompatActivity {
 
     //PengyouRegister code
     private Button add_hangout;
-    private EditText room_name;
+
 
     private ListView listView;
     private ArrayAdapter<String> arrayAdapter;
@@ -77,8 +64,9 @@ public class InterestActivity extends AppCompatActivity {
 
         add_hangout = (Button) findViewById(R.id.btn_add_hangout);
 
+
         //Toolbar (Part 14)
-        mInterestToolbar = findViewById(R.id.interest_app_bar);
+        mInterestToolbar = findViewById(R.id.view_app_bar);
         setSupportActionBar(mInterestToolbar); // Must set this first before the lines below!
 
         // Remember to set parent in AndroidManifest.xml !
@@ -142,6 +130,9 @@ public class InterestActivity extends AppCompatActivity {
                 case 9:
                     mEventType= "Cultural";
                     break;
+                case 10:
+                    mEventType= "Others";
+                    break;
                 default:
                     mEventType = "**Invalid**";
                     break;
@@ -171,6 +162,9 @@ public class InterestActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
 
     @Override
@@ -188,13 +182,36 @@ public class InterestActivity extends AppCompatActivity {
 
                 ) {
                     @Override
-                    protected void populateViewHolder(EventxxViewHolder viewHolder, Eventxx model, int position) {
+                    protected void populateViewHolder(EventxxViewHolder viewHolder, Eventxx model, final int position) {
                         viewHolder.setTitle(model.getTitle());
                         viewHolder.setSpecificEvent(model.getSpecificEvent());
+                        viewHolder.setTimeEvent(model.getTimeEvent());
+                        viewHolder.setDateEvent(model.getDateEvent());
+                        viewHolder.setLocationEvent(model.getLocationEvent());
+                        viewHolder.setParticipantEvent(model.getParticipantEvent());
+
+                        final String user_id=getRef(position).getKey();
+
+
+                        viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Log.d("LogEventxxViewHolder", "Fondo Clicked");
+
+                                Intent intent = new Intent(InterestActivity.this, ViewHangoutActivity.class);
+                                intent.putExtra("user_id", user_id);
+                                intent.putExtra("event_type",mEventType);
+                                startActivity(intent);
+                            }
+                        });
+
                     }
                 };
 
         mEventList.setAdapter(firebaseRecyclerAdapter);
+
+
+
     }
     //Pause: Retrieving data from firebase database (Part 14)
 
@@ -204,11 +221,16 @@ public class InterestActivity extends AppCompatActivity {
 
         View mView; // For setting on click listener or setting values
 
+
+
         public EventxxViewHolder(View itemView) {
             super(itemView);
 
             mView=itemView;
+
         }
+
+
 
         public void setTitle(String title){
 
@@ -219,6 +241,25 @@ public class InterestActivity extends AppCompatActivity {
         public void setSpecificEvent(String specificEvent) {
             TextView eventTitleView=mView.findViewById(R.id.event_single_specific);
             eventTitleView.setText(specificEvent);
+        }
+        public void setTimeEvent(String timeEvent) {
+            TextView eventTitleView=mView.findViewById(R.id.event_single_time);
+            eventTitleView.setText(timeEvent);
+        }
+
+        public void setDateEvent(String dateEvent) {
+            TextView eventTitleView=mView.findViewById(R.id.event_single_date);
+            eventTitleView.setText(dateEvent);
+        }
+
+        public void setLocationEvent(String locationEvent) {
+            TextView eventTitleView=mView.findViewById(R.id.event_single_location);
+            eventTitleView.setText(locationEvent);
+        }
+
+        public void setParticipantEvent(String participantEvent) {
+            TextView eventTitleView=mView.findViewById(R.id.event_single_numParticipant);
+            eventTitleView.setText(participantEvent);
         }
     }
     //Pause: Retrieving data from firebase database (Part 14)

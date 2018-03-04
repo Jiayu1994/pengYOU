@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiayu.pengyou_version2.ViewHangoutActivity">
+
+    <include
+        android:id="@+id/view_app_bar"
+        layout="@layout/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/viewDescription"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/viewPlace"
+        android:layout_marginTop="32dp"
+        android:text="Description"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/viewSpecific"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/view_app_bar"
+        android:text="Title"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/viewParticipant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/viewDescription"
+        android:text="Participant"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/join_hangout_btn"
+        android:layout_below="@+id/viewParticipant"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/userview_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/viewParticipant"
+            android:layout_centerHorizontal="true" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/join_hangout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="Join"
+        android:textColor="@color/cardview_light_background" />
+
+    <TextView
+        android:id="@+id/viewDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/viewSpecific"
+        android:layout_margin="10dp"
+        android:text="Date_Time"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/viewPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/viewDay"
+        android:layout_margin="10dp"
+        android:text="Place"
+        android:textColor="@color/cast_expanded_controller_background_color"
+        android:textSize="16sp" />
+
+</RelativeLayout>
+
+

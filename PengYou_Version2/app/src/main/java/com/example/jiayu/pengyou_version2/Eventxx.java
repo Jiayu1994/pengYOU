@@ -15,10 +15,20 @@ public class Eventxx {
     // These name must match firebase!
     public String title;
     public String specificEvent;
+    public String time;
+    public String date;
+    public String location;
+    public String numberParticipant;
+    public String description;
 
     public Eventxx(String title, String specificEvent) {
         this.title = title;
         this.specificEvent=specificEvent;
+        this.time = time;
+        this.date = date;
+        this.location = location;
+        this.numberParticipant = numberParticipant;
+        this.description = description;
     }
 
     public String getTitle() {
@@ -30,10 +40,30 @@ public class Eventxx {
     }
 
     public String getSpecificEvent() {
-        return specificEvent;
+        return "( " + specificEvent + " )";
     }
-
     public void setSpecificEvent(String specificEvent) {
         this.specificEvent = specificEvent;
     }
+
+    public String getTimeEvent() {
+        return "  " + time;
+    }
+
+    public String getDateEvent() {
+        return "Date & Time : " + date + ",";
+    }
+
+    public String getLocationEvent() {
+        return location;
+    }
+
+    public String getParticipantEvent() {
+        return "Participants Required : " + numberParticipant;
+    }
+
+    public String getDescriptionEvent(){
+        return "Description : " + description;
+    }
 } //Pause: Retrieving data from firebase database (Part 14)
+
