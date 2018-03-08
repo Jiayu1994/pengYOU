@@ -24,6 +24,8 @@ import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,6 +52,8 @@ public class EventActivity extends AppCompatActivity implements DatePickerDialog
     private TextInputLayout mEventLocation;
     private TextInputLayout mEventDescription;
 
+    private FirebaseAuth mAuth;
+
     public Button mEventSubmitBtn;
 
     private String eventSpecificType;
@@ -59,6 +63,8 @@ public class EventActivity extends AppCompatActivity implements DatePickerDialog
     private String eventParticipant;
     private String eventLocation;
     private String eventDescription;
+
+    private int eventCount;
 
     private Spinner mEventSpinner;
 
@@ -74,6 +80,10 @@ public class EventActivity extends AppCompatActivity implements DatePickerDialog
     private TextView get_place; //google map
     final int PLACE_PICKER_REQUEST =1;
 
+
+    private FirebaseUser mCurrent_user;
+    private DatabaseReference mDatabase_EventUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +97,7 @@ public class EventActivity extends AppCompatActivity implements DatePickerDialog
 
         mEventSubmitBtn = findViewById(R.id.event_submit_btn);
 
+        mAuth = FirebaseAuth.getInstance();// Green Dot Online/Offine Status
 
 
         //mGridEventIndex = getIntent().getIntExtra("grid_index", 99);
@@ -104,6 +115,9 @@ public class EventActivity extends AppCompatActivity implements DatePickerDialog
         getSupportActionBar().setTitle(userName);
 
         mRootRef = FirebaseDatabase.getInstance().getReference();
+
+        //Current User
+        mCurrent_user=FirebaseAuth.getInstance().getCurrentUser();
 
         addItemsOnEventSpinner(mEventType);
 
@@ -187,7 +201,6 @@ public class EventActivity extends AppCompatActivity implements DatePickerDialog
                 eventDescription = mEventDescription.getEditText().getText().toString();
                 eventLocation = get_place.getText().toString();
 
-
                 eventSpecificType =String.valueOf(mEventSpinner.getSelectedItem());
 
 
@@ -205,10 +218,13 @@ public class EventActivity extends AppCompatActivity implements DatePickerDialog
                         eventAddMap.put("location", eventLocation );
                         eventAddMap.put("description", eventDescription );
 
+                        eventAddMap.put("countParticipant", eventCount);
 
+                        //mCurrent_user= FirebaseAuth.getInstance().getCurrentUser();
+                        String mCurrent_user=mAuth.getCurrentUser().getUid();
                         Map chatUserMap = new HashMap();
                         chatUserMap.put("Events/" + mEventType + "/" + eventTitle, eventAddMap);
-                        // chatUserMap.put("Events/"+mChatUser+"/",eventAddMap);
+
 
                         //show toast and make the text centered
                         Toast toast =Toast.makeText(EventActivity.this, R.string.added_event,

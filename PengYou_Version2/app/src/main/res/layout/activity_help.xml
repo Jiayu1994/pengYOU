@@ -21,17 +21,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/help_app_bar"
-        android:layout_marginTop="23dp"
         android:text="Please Select Enquires Type"
-        android:textSize="24sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/help_spinner"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/help_prompt"
         android:paddingBottom="15dp" />
+
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/help_title"
@@ -39,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="false"
         android:layout_alignWithParentIfMissing="false"
-        android:layout_below="@+id/help_spinner"
+        android:layout_below="@+id/help_email"
         android:baselineAligned="false">
 
         <android.support.design.widget.TextInputEditText
@@ -49,22 +51,8 @@
             android:layout_below="@+id/help_title"
             android:layout_marginTop="25dp"
             android:hint="Title"
-            android:textSize="24sp" />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/help_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/help_title">
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="284dp"
-            android:hint="Input Message Here.."
-            android:paddingBottom="250dp"
             android:textSize="20sp" />
+
     </android.support.design.widget.TextInputLayout>
 
 
@@ -77,5 +65,45 @@
         android:layout_marginTop="13dp"
         android:backgroundTint="@android:color/holo_orange_light"
         android:text="Submit" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/help_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/help_title">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:hint="Message"
+            android:paddingBottom="120dp"
+            android:textSize="20sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/help_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/help_spinner">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:textSize="20sp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/help_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/help_username">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textSize="20sp" />
+    </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>

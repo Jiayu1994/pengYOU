@@ -42,4 +42,5 @@
         android:paddingStart="10dp"
         android:text="@string/already_have_an_account"
         android:textColor="@android:color/black" />
+
 </RelativeLayout>

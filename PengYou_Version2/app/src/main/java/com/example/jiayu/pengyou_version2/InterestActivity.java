@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -192,11 +193,13 @@ public class InterestActivity extends AppCompatActivity {
 
                         final String user_id=getRef(position).getKey();
 
+                        int currentPosition = position;
+
 
                         viewHolder.mView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Log.d("LogEventxxViewHolder", "Fondo Clicked");
+                                Log.d("LogEventxxViewHolder", "Onclick Clicked");
 
                                 Intent intent = new Intent(InterestActivity.this, ViewHangoutActivity.class);
                                 intent.putExtra("user_id", user_id);
@@ -205,7 +208,19 @@ public class InterestActivity extends AppCompatActivity {
                             }
                         });
 
+                        //Long click for delete recycler view
+                        viewHolder.mView.setOnLongClickListener(new View.OnLongClickListener() {
+                            @Override
+                            public boolean onLongClick(View v) {
+
+                                Log.d("LogEventxxViewHolder", "Longclick Clicked");
+
+                                return true;
+                            }
+                        });
+
                     }
+
                 };
 
         mEventList.setAdapter(firebaseRecyclerAdapter);

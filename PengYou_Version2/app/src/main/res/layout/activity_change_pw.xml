@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/view_app_bar"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="68dp"
         android:layout_weight="1"
         android:ems="10"
         android:hint="Enter New Password"
@@ -31,12 +31,22 @@
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="105dp" />
 
+    <EditText
+        android:id="@+id/confirmPw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText3"
+        android:layout_below="@+id/editText3"
+        android:ems="10"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/ChangePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/editText3"
-        android:layout_marginStart="15dp"
+        android:layout_alignBottom="@+id/confirmPw"
+        android:layout_marginStart="21dp"
         android:layout_toEndOf="@+id/editText3"
         android:backgroundTint="@android:color/background_light"
         android:onClick="change"

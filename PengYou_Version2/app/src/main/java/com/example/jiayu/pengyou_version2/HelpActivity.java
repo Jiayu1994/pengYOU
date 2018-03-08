@@ -37,11 +37,16 @@ public class HelpActivity extends AppCompatActivity {
 
     private TextInputLayout mHelpTitle;
     private TextInputLayout mHelpMessage;
+    private TextInputLayout mHelpUsername;
+    private TextInputLayout mHelpEmail;
 
     public Button mHelpSubmitBtn;
 
     private String helpTitle;
     private String helpMessage;
+    private String helpEmail;
+    private String helpUsername;
+
     private String helpSpecificType;
 
     private Spinner mHelpSpinner;
@@ -57,6 +62,9 @@ public class HelpActivity extends AppCompatActivity {
         mHelpToolbar = (Toolbar) findViewById(R.id.help_app_bar);
         mHelpTitle = findViewById(R.id.help_title);
         mHelpMessage = findViewById(R.id.help_message);
+        mHelpEmail = findViewById(R.id.help_email);
+        mHelpUsername = findViewById(R.id.help_username);
+
         mHelpSubmitBtn = findViewById(R.id.help_submit_btn);
 
         //mGridEventIndex = getIntent().getIntExtra("grid_index", 99);
@@ -85,6 +93,9 @@ public class HelpActivity extends AppCompatActivity {
 
                 helpTitle = mHelpTitle.getEditText().getText().toString();
                 helpMessage = mHelpMessage.getEditText().getText().toString();
+                helpEmail = mHelpEmail.getEditText().getText().toString();
+                helpUsername = mHelpUsername.getEditText().getText().toString();
+
 
                 helpSpecificType =String.valueOf(mHelpSpinner.getSelectedItem());
 
@@ -98,10 +109,13 @@ public class HelpActivity extends AppCompatActivity {
                         helpAddMap.put("title", helpTitle);
                         helpAddMap.put("help_message", helpMessage);
                         helpAddMap.put("specificHelp",helpSpecificType);
+                        helpAddMap.put("username", helpUsername);
+                        helpAddMap.put("email", helpEmail);
+
 
 
                         Map helpUserMap = new HashMap();
-                        helpUserMap.put("Help&Support/" +mCurrentUserId+ "/" + helpTitle + helpMessage, helpAddMap);
+                        helpUserMap.put("Help&Support/" +mCurrentUserId+ "/" + helpSpecificType, helpAddMap);
                         // chatUserMap.put("Events/"+mChatUser+"/",eventAddMap);
 
                         //show toast and make the text centered

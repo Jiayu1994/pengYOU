@@ -95,7 +95,7 @@ public class AccountActivity extends AppCompatActivity {
         if(user.isEmailVerified()){
             isVerified="Verified";
             mEmailverify.setEnabled(false);
-            mEmailverify.setVisibility(View.INVISIBLE);
+          //  mEmailverify.setVisibility(View.INVISIBLE);
         }
 
         else

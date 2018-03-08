@@ -16,7 +16,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class ChangePwActivity extends AppCompatActivity {
 
-    EditText el;
+    EditText newpassword;
+    EditText confirmpassword;
     FirebaseAuth mAuth;
     ProgressDialog dialog;
 
@@ -25,7 +26,9 @@ public class ChangePwActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pw);
 
-        el=findViewById(R.id.editText3);
+        newpassword=findViewById(R.id.editText3);
+        confirmpassword = findViewById(R.id.confirmPw);
+
         mAuth = FirebaseAuth.getInstance();
         dialog = new ProgressDialog(this);
     }
@@ -33,12 +36,12 @@ public class ChangePwActivity extends AppCompatActivity {
     public void change(View v)
     {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user!=null)
+        if (user!=null && newpassword.getText().toString().equals(confirmpassword.getText().toString()))
         {
             dialog.setMessage("Changing Password, Please Wait");
             dialog.show();
 
-            user.updatePassword(el.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+            user.updatePassword(newpassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful())
@@ -58,6 +61,12 @@ public class ChangePwActivity extends AppCompatActivity {
                     }
                 }
             });
+        }
+
+        else
+        {
+            dialog.dismiss();
+            Toast.makeText(getApplicationContext(), "Confirm Password have to be same as New password", Toast.LENGTH_LONG).show();
         }
 
     }
