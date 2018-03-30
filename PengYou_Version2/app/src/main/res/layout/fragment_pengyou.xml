@@ -1,0 +1,70 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jiayu.pengyou_version2.PengyouFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Welcome to PengYou!"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="36sp"
+            android:textStyle="bold|italic" />
+
+        <ImageView
+            android:id="@+id/app_Icon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/bunny_app_icon_round" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/app_Icon"
+            android:padding="10dp"
+            android:text="PengYou is a social media application which provides a platform whereby users can join and create multiple hangout events to interact with people of common interests. Users can also interact with each other by sending messages, this includes many other useful features that is require in developing a social media application. These application is to target and foster better relationships among the community."
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView4"
+            android:text="The Name 'PengYou' "
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView5"
+            android:padding="10dp"
+            android:text="‘PengYou’ which means ‘friend’ that comes from the dialect Hokkien which is widely used amongst Singaporeans. An application name is important as it generates an identity that is relevant to the application.
+The reason behind this name is to create a Singaporean identity because the primary target audience are Singaporeans or anyone that lives in Singapore. "
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

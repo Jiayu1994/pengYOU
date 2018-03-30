@@ -1,6 +1,5 @@
 package com.example.jiayu.pengyou_version2;
 
-import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
@@ -20,8 +19,8 @@ class SectionsPagerAdapter extends FragmentPagerAdapter {
         switch(position)
         {
             case 0:
-                RequestsFragment requestsFragment = new RequestsFragment();
-                return  requestsFragment;
+                PengyouFragment pengyouFragment = new PengyouFragment();
+                return  pengyouFragment;
 
             case 1:
                 ChatsFragment chatsFragment = new ChatsFragment();
@@ -49,7 +48,7 @@ class SectionsPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position){
         switch (position) {
             case 0:
-                return "Requests";
+                return "PengYou";
             case 1:
                 return "Chats";
             case 2:

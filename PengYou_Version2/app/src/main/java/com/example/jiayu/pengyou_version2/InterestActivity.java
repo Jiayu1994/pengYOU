@@ -1,27 +1,35 @@
 package com.example.jiayu.pengyou_version2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class InterestActivity extends AppCompatActivity {
+public class InterestActivity extends AppCompatActivity{
 
     public static final String EXTRA_CREATOR = "creatorName";
     public static final String EXTRA_LIKES = "likeCount";
@@ -168,6 +176,8 @@ public class InterestActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -228,6 +238,8 @@ public class InterestActivity extends AppCompatActivity {
 
 
     }
+
+
     //Pause: Retrieving data from firebase database (Part 14)
 
     //Continue: Retrieving data from firebase database (Part 14)
@@ -237,14 +249,12 @@ public class InterestActivity extends AppCompatActivity {
         View mView; // For setting on click listener or setting values
 
 
-
         public EventxxViewHolder(View itemView) {
             super(itemView);
 
             mView=itemView;
 
         }
-
 
 
         public void setTitle(String title){
@@ -278,6 +288,7 @@ public class InterestActivity extends AppCompatActivity {
         }
     }
     //Pause: Retrieving data from firebase database (Part 14)
+
 
 }
 
